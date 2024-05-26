@@ -16,9 +16,9 @@ public class StoreData {
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction tx = session.beginTransaction();
-        Employee emp = new Employee("ROHAN", "KAMAL");
+        Employee emp = new Employee("MOHAN", "KAMAL");
         int x = (int) session.save(emp);
-        System.out.println("===============Employee ID: " + x); // Print the generated ID
+        System.out.println("Employee ID: " + x); // Print the generated ID
         tx.commit();
 
         sf.close(); // Close the SessionFactory

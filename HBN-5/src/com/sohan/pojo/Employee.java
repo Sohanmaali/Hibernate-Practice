@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.sohan.pojo;
 
-/**
- *
+/*
  * @author Sohan_Maali
  */
 public class Employee {
@@ -14,7 +9,8 @@ public class Employee {
     private String name;
     private String father;
 
-    public Employee(String name, String father) {
+    public Employee( String name, String father) {
+
         this.name = name;
         this.father = father;
     }
@@ -45,4 +41,10 @@ public class Employee {
     public void setFather(String father) {
         this.father = father;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" + " id = " + id + ", name = " + name + ", father = " + father + '}';
+    }
+    
 }

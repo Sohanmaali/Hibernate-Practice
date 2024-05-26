@@ -10,5 +10,9 @@
         <property name="name" column="name" />
         <property name="father" column="father" />
     </class>
+ 
   
+   
+     
 </hibernate-mapping>
+

@@ -1,6 +1,6 @@
 package com.sohan.test;
 
-import com.hql.Student;
+import com.sohan.pojo.Employee;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
@@ -9,16 +9,28 @@ import org.hibernate.Session;
 public class CreateTable {
 
     public static void main(String[] args) {
-        Configuration con = new Configuration();
-        con.configure();
-        SessionFactory sf = con.buildSessionFactory();
-        Session session = sf.openSession();
-        Transaction tx = session.beginTransaction();
-//        Student st = new Student(10, 100, "SOHAN", "KAMAL");
+        System.out.println("Main Method Start");
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
 
-//        session.save(st);
-        tx.commit();
+        Employee employee = new Employee("Sohan", "Kamal");
+        session.save(employee);
+
+        transaction.commit();
         session.close();
-        sf.close();
+        sessionFactory.close();
+        System.out.println("Main Method End");
+    }
+
+    public void main() {
+
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
+
+        transaction.commit();
+        session.clear();
+        sessionFactory.close();
     }
 }
